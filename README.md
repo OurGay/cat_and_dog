@@ -1,1 +1,2 @@
-# trad
+# trader
+Framework for buildi
