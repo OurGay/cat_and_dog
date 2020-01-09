@@ -1,2 +1,2 @@
 # trader
-Framework for building automated trading systems (ATS) in 
+Framework for building automated trading systems (ATS) in GoLang
