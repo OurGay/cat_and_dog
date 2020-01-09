@@ -1,2 +1,2 @@
 # trader
-Framework for building automated tr
+Framework for building automated trading syst
