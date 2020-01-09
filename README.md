@@ -1,2 +1,2 @@
 # trader
-Framework for buildi
+Framework for building automated tr
