@@ -29,3 +29,18 @@ type Trade struct {
 	Price, Amount float64
 	Time          time.Time
 }
+
+//Quote type
+type Quote struct {
+	//TODO refactor into int
+	Bid, Ask float64
+}
+
+//NewEngine constructor
+func NewEngine() *Engine {
+	return &Engine{
+		quoteCh:  make(map[string]chan Quote),
+		tradeCh:  make(map[string]chan Trade),
+		changeCh: make(map[string]chan struct{}),
+		ohlc:     make(map[string]*History),
+		quit:     make(chan struct{}),
