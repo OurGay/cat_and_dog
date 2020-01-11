@@ -62,3 +62,19 @@ func (e *Engine) AddSymbol(symbol string, quotes chan Quote, trades chan Trade) 
 
 //AddStrategy to engine
 func (e *Engine) AddStrategy(strategy *Strategy) {
+	e.strategy = strategy
+}
+
+//AddExchanger to engine
+func (e *Engine) AddExchanger(ex Exchanger) {
+	e.om = newOrderManagement(e.strategy, ex)
+	e.om.signalCh = e.signals
+	go e.om.signalLoop()
+}
+
+//Run engine
+func (e *Engine) Run() {
+	go e.loop()
+}
+
+//Stop engine
