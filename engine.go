@@ -78,3 +78,15 @@ func (e *Engine) Run() {
 }
 
 //Stop engine
+func (e *Engine) Stop() {
+	close(e.quit)
+}
+
+func (e *Engine) loop() {
+
+	// Trades loop
+	for symbol, tradeCh := range e.tradeCh {
+		go func(s string, ch chan Trade) {
+			for {
+				select {
+				case <-e.quit:
