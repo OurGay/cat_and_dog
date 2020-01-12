@@ -90,3 +90,21 @@ func (e *Engine) loop() {
 			for {
 				select {
 				case <-e.quit:
+					return
+				case trade := <-ch:
+					log.WithFields(log.Fields{
+						"symbol": s,
+						"price":  trade.Price,
+						"amount": trade.Amount,
+					}).Debug("Trade")
+
+					e.gotTrade(s, trade)
+					e.changeCh[s] <- struct{}{}
+				}
+			}
+		}(symbol, tradeCh)
+	}
+
+	// Quotes loop
+	for symbol, quoteCh := range e.quoteCh {
+		go func(s string, ch chan Quote) {
