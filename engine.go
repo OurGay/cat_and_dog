@@ -108,3 +108,29 @@ func (e *Engine) loop() {
 	// Quotes loop
 	for symbol, quoteCh := range e.quoteCh {
 		go func(s string, ch chan Quote) {
+			for {
+				select {
+				case <-e.quit:
+					return
+				case quote := <-ch:
+					log.WithFields(log.Fields{
+						"symbol": s,
+						"bid":    quote.Bid,
+						"ask":    quote.Ask,
+					}).Debug("Quote")
+
+					e.gotQuote(s, quote)
+					e.changeCh[s] <- struct{}{}
+				}
+			}
+		}(symbol, quoteCh)
+	}
+
+	// Change
+	for s := range e.tradeCh {
+		go func(symbol string) {
+			for {
+				select {
+				case <-e.quit:
+					return
+				case <-e.changeCh[symbol]:
