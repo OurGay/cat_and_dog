@@ -134,3 +134,28 @@ func (e *Engine) loop() {
 				case <-e.quit:
 					return
 				case <-e.changeCh[symbol]:
+					if e.strategy == nil {
+						continue
+					}
+
+					if e.strategy.Symbol == symbol {
+						log.WithFields(log.Fields{
+							"strategy": e.strategy.Code,
+						}).Debug("Tick")
+						go signal(e)
+					}
+				}
+			}
+		}(s)
+	}
+
+	// Run every second
+	ticker := time.NewTicker(time.Second)
+
+	for {
+		select {
+		case <-ticker.C:
+			log.WithFields(log.Fields{
+				"strategy": e.strategy.Code,
+			}).Debug("Ticker")
+			go signal(e)
