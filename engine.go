@@ -172,3 +172,9 @@ func signal(e *Engine) {
 		}).Errorf("Error - %v", err)
 		return
 	}
+
+	select {
+	case e.signals <- signal:
+	default:
+	}
+}
