@@ -159,3 +159,16 @@ func (e *Engine) loop() {
 				"strategy": e.strategy.Code,
 			}).Debug("Ticker")
 			go signal(e)
+		}
+	}
+}
+
+func signal(e *Engine) {
+	signal, err := e.strategy.OnTick(e)
+
+	if err != nil {
+		log.WithFields(log.Fields{
+			"strategy": e.strategy.Code,
+		}).Errorf("Error - %v", err)
+		return
+	}
