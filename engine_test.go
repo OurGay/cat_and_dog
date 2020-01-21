@@ -44,3 +44,16 @@ var _ = Describe("Engine", func() {
 
 			tH1 := t.Truncate(time.Hour)
 			Expect(ngn.ohlc[symbol].TimeSeries[H1][tH1].Open).Should(BeNumerically("==", trade.Price))
+		})
+	})
+
+	It("Quotes", func() {
+
+		symbol := "EUR/USD"
+
+		ngn := NewEngine()
+		quotes := make(chan Quote)
+		trades := make(chan Trade)
+		ngn.AddSymbol(symbol, quotes, trades)
+		ngn.Run()
+		defer ngn.Stop()
