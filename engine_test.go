@@ -57,3 +57,14 @@ var _ = Describe("Engine", func() {
 		ngn.AddSymbol(symbol, quotes, trades)
 		ngn.Run()
 		defer ngn.Stop()
+
+		quote := Quote{
+			Bid: 35.23,
+			Ask: 36.21,
+		}
+
+		quotes <- quote
+		time.Sleep(time.Millisecond)
+
+		Expect(ngn.quotes[symbol].Bid).Should(BeNumerically("==", quote.Bid))
+		Expect(ngn.quotes[symbol].Ask).Should(BeNumerically("==", quote.Ask))
