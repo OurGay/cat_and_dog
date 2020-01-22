@@ -68,3 +68,5 @@ var _ = Describe("Engine", func() {
 
 		Expect(ngn.quotes[symbol].Bid).Should(BeNumerically("==", quote.Bid))
 		Expect(ngn.quotes[symbol].Ask).Should(BeNumerically("==", quote.Ask))
+	})
+})
