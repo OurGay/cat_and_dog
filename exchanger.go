@@ -11,3 +11,14 @@ type Order struct {
 }
 
 //Position abstraction
+type Position struct {
+	Symbol string
+	Price  float64
+	Amount int
+}
+
+//OrderType for orders
+type OrderType uint
+
+//Limit,Stop,Market types
+const (
