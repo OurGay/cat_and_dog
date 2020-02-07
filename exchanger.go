@@ -22,3 +22,16 @@ type OrderType uint
 
 //Limit,Stop,Market types
 const (
+	Limit OrderType = iota
+	Stop
+	Market
+)
+
+//Exchanger interface
+type Exchanger interface {
+	Orders() []Order
+	Positions() []Position
+
+	NewOrder(Order) (string, error)
+	CancelOrder(string) (bool, error)
+}
