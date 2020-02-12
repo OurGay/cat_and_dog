@@ -5,4 +5,7 @@ import (
 	"strconv"
 
 	"github.com/apex/log"
-	"github.com/santa
+	"github.com/santacruz123/trader"
+)
+
+type ex
