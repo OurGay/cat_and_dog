@@ -9,4 +9,4 @@ import (
 )
 
 type exchng struct {
-	p
+	pos []trader.Position
