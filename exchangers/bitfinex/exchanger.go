@@ -8,4 +8,5 @@ import (
 	"github.com/santacruz123/trader"
 )
 
-type ex
+type exchng struct {
+	p
