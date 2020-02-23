@@ -10,3 +10,4 @@ import (
 
 type exchng struct {
 	pos []trader.Position
+	ord []trader.Or
