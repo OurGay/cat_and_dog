@@ -13,4 +13,4 @@ type exchng struct {
 	ord []trader.Order
 }
 
-//NewExc
+//NewExchanger constr
