@@ -14,4 +14,4 @@ type exchng struct {
 }
 
 //NewExchanger constructor
-func New() t
+func New() trader.Exchang
