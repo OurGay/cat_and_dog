@@ -20,3 +20,6 @@ func New() trader.Exchanger {
 	go func() {}()
 
 	return e
+}
+
+func (e *exchng
