@@ -17,4 +17,6 @@ type exchng struct {
 func New() trader.Exchanger {
 	e := &exchng{}
 
-	go func() 
+	go func() {}()
+
+	return e
