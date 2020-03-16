@@ -22,4 +22,4 @@ func New() trader.Exchanger {
 	return e
 }
 
-func (e *exchng
+func (e *exchng) FetchOrders
