@@ -22,4 +22,5 @@ func New() trader.Exchanger {
 	return e
 }
 
-func (e *exchng) FetchOrders() (o []trader.Ord
+func (e *exchng) FetchOrders() (o []trader.Order, err error) {
+	
