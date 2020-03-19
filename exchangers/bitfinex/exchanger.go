@@ -23,4 +23,5 @@ func New() trader.Exchanger {
 }
 
 func (e *exchng) FetchOrders() (o []trader.Order, err error) {
-	log.Info(
+	log.Info("Fetching orders")
+	retur
