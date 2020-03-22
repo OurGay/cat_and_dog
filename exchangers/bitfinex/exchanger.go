@@ -27,4 +27,4 @@ func (e *exchng) FetchOrders() (o []trader.Order, err error) {
 	return
 }
 
-func (e *exchng) FetchPosit
+func (e *exchng) FetchPositions() (p []trader.
