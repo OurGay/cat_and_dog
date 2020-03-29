@@ -29,3 +29,7 @@ func (e *exchng) FetchOrders() (o []trader.Order, err error) {
 
 func (e *exchng) FetchPositions() (p []trader.Position, err error) {
 	log.Info("Fetching positions")
+	return
+}
+
+func (e *
