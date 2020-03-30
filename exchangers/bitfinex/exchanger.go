@@ -32,4 +32,4 @@ func (e *exchng) FetchPositions() (p []trader.Position, err error) {
 	return
 }
 
-func (e *exchng) O
+func (e *exchng) Orders() (o []trade
