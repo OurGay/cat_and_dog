@@ -36,4 +36,4 @@ func (e *exchng) Orders() (o []trader.Order) {
 	return e.ord
 }
 
-func (e *ex
+func (e *exchng) Position
