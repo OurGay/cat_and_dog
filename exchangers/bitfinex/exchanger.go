@@ -38,3 +38,6 @@ func (e *exchng) Orders() (o []trader.Order) {
 
 func (e *exchng) Positions() (p []trader.Position) {
 	return e.pos
+}
+
+func (e *exch
