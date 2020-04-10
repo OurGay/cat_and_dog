@@ -40,4 +40,4 @@ func (e *exchng) Positions() (p []trader.Position) {
 	return e.pos
 }
 
-func (e *exchng) NewOrder(
+func (e *exchng) NewOrder(o trader.Order) (s
