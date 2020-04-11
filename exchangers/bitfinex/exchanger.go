@@ -40,4 +40,5 @@ func (e *exchng) Positions() (p []trader.Position) {
 	return e.pos
 }
 
-func (e *exchng) NewOrder(o trader.Order) (string, error)
+func (e *exchng) NewOrder(o trader.Order) (string, error) {
+	o.ID = strco
