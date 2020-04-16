@@ -41,4 +41,6 @@ func (e *exchng) Positions() (p []trader.Position) {
 }
 
 func (e *exchng) NewOrder(o trader.Order) (string, error) {
-	o.ID = strconv.Itoa(rand.In
+	o.ID = strconv.Itoa(rand.Int())
+
+	log.WithFields(
