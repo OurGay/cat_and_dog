@@ -44,4 +44,4 @@ func (e *exchng) NewOrder(o trader.Order) (string, error) {
 	o.ID = strconv.Itoa(rand.Int())
 
 	log.WithFields(log.Fields{
-		"Amoun
+		"Amount": o.Amoun
