@@ -45,4 +45,5 @@ func (e *exchng) NewOrder(o trader.Order) (string, error) {
 
 	log.WithFields(log.Fields{
 		"Amount": o.Amount,
-		"ID":     o.
+		"ID":     o.ID,
+		"P
