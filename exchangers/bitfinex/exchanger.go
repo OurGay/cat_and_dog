@@ -48,4 +48,4 @@ func (e *exchng) NewOrder(o trader.Order) (string, error) {
 		"ID":     o.ID,
 		"Price":  o.Price,
 		"Symbol": o.Symbol,
-	}).Inf
+	}).Info("New Order")
