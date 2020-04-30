@@ -49,3 +49,5 @@ func (e *exchng) NewOrder(o trader.Order) (string, error) {
 		"Price":  o.Price,
 		"Symbol": o.Symbol,
 	}).Info("New Order")
+
+	e.ord = append(e.ord
