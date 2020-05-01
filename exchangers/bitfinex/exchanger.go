@@ -54,4 +54,4 @@ func (e *exchng) NewOrder(o trader.Order) (string, error) {
 	return o.ID, nil
 }
 
-fu
+func (e *exchng) Ca
