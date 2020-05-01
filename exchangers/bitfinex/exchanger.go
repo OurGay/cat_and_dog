@@ -51,4 +51,7 @@ func (e *exchng) NewOrder(o trader.Order) (string, error) {
 	}).Info("New Order")
 
 	e.ord = append(e.ord, o)
-	return 
+	return o.ID, nil
+}
+
+fu
