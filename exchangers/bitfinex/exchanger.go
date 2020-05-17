@@ -54,4 +54,5 @@ func (e *exchng) NewOrder(o trader.Order) (string, error) {
 	return o.ID, nil
 }
 
-func (e *exchng) CancelOrder(ID string) (ok bool, er
+func (e *exchng) CancelOrder(ID string) (ok bool, err error) {
+	l
