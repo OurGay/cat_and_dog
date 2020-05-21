@@ -55,4 +55,6 @@ func (e *exchng) NewOrder(o trader.Order) (string, error) {
 }
 
 func (e *exchng) CancelOrder(ID string) (ok bool, err error) {
-	log.WithFields(log
+	log.WithFields(log.Fields{
+		"ID": ID,
+	}).I
