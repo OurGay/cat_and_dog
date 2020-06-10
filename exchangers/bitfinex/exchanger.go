@@ -59,4 +59,5 @@ func (e *exchng) CancelOrder(ID string) (ok bool, err error) {
 		"ID": ID,
 	}).Info("Cancel order")
 
-	return tru
+	return true, nil
+}
