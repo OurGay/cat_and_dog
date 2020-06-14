@@ -21,3 +21,14 @@ func New() trader.Exchanger {
 
 func (e *exchng) FetchOrders() (o []trader.Order, err error) {
 	log.Info("Fetching orders")
+	return
+}
+
+func (e *exchng) FetchPositions() (p []trader.Position, err error) {
+	log.Info("Fetching positions")
+	return
+}
+
+func (e *exchng) Orders() (o []trader.Order) {
+	return e.ord
+}
