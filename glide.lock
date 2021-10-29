@@ -1,0 +1,9 @@
+
+hash: 984e005b4b4737cbcf52d5825593717c609710eb71a57477ae97040d02648338
+updated: 2017-05-27T09:43:23.5374755+03:00
+imports:
+- name: github.com/apex/log
+  version: 8f3a15d95392c8fc202d1e1059f46df21dff2992
+- name: github.com/bitfinexcom/bitfinex-api-go
+  version: 2d67f9cd15489f55cb1b9bb1aab26f7b0b5c7b02
+  subpackages:
