@@ -7,3 +7,25 @@ imports:
 - name: github.com/bitfinexcom/bitfinex-api-go
   version: 2d67f9cd15489f55cb1b9bb1aab26f7b0b5c7b02
   subpackages:
+  - v1
+- name: github.com/pkg/errors
+  version: c605e284fe17294bda444b34710735b29d1a9d90
+testImports:
+- name: github.com/onsi/ginkgo
+  version: a1f616c97771e46da1722d3aa9dcde0a43f55682
+  subpackages:
+  - config
+  - internal/codelocation
+  - internal/containernode
+  - internal/failer
+  - internal/leafnodes
+  - internal/remote
+  - internal/spec
+  - internal/spec_iterator
+  - internal/specrunner
+  - internal/suite
+  - internal/testingtproxy
+  - internal/writer
+  - reporters
+  - reporters/stenographer
+  - reporters/stenographer/support/go-colorable
