@@ -1,3 +1,4 @@
 package: github.com/santacruz123/trader
 import:
-- package: github.com/apex
+- package: github.com/apex/log
+- package
