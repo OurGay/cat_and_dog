@@ -1,4 +1,5 @@
 package: github.com/santacruz123/trader
 import:
 - package: github.com/apex/log
-- package: github.com/pkg/
+- package: github.com/pkg/errors
+- p
