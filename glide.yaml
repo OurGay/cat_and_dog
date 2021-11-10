@@ -2,4 +2,5 @@ package: github.com/santacruz123/trader
 import:
 - package: github.com/apex/log
 - package: github.com/pkg/errors
-- package: github.com/bitfinexcom/bitfinex-ap
+- package: github.com/bitfinexcom/bitfinex-api-go
+  subpack
