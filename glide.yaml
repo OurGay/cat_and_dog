@@ -3,4 +3,5 @@ import:
 - package: github.com/apex/log
 - package: github.com/pkg/errors
 - package: github.com/bitfinexcom/bitfinex-api-go
-  subpack
+  subpackages:
+  - v
