@@ -6,4 +6,5 @@ import:
   subpackages:
   - v1
 testImport:
-- package: github.c
+- package: github.com/onsi/ginkgo
+- p
