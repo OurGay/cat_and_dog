@@ -6,4 +6,4 @@ import:
   subpackages:
   - v1
 testImport:
-- pac
+- package: github.c
