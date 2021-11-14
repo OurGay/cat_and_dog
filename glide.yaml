@@ -4,4 +4,6 @@ import:
 - package: github.com/pkg/errors
 - package: github.com/bitfinexcom/bitfinex-api-go
   subpackages:
-  - v
+  - v1
+testImport:
+- pac
