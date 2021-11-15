@@ -7,4 +7,4 @@ import:
   - v1
 testImport:
 - package: github.com/onsi/ginkgo
-- p
+- package: github.com/
