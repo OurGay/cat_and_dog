@@ -40,3 +40,19 @@ func (e *Engine) LoadHistory(symbol string, tf Timeframe, reader io.Reader) erro
 
 		if err == io.EOF {
 			break
+		}
+
+		if err != nil {
+			return err
+		}
+
+		ohlc := &OHLC{}
+
+		t, err := time.Parse(format, rec[0])
+
+		if err != nil {
+			return err
+		}
+
+		if n, err := strconv.ParseFloat(rec[1], 64); err == nil {
+			ohlc.Open = n
