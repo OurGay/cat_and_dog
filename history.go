@@ -56,3 +56,19 @@ func (e *Engine) LoadHistory(symbol string, tf Timeframe, reader io.Reader) erro
 
 		if n, err := strconv.ParseFloat(rec[1], 64); err == nil {
 			ohlc.Open = n
+		}
+
+		if n, err := strconv.ParseFloat(rec[2], 64); err == nil {
+			ohlc.High = n
+		}
+
+		if n, err := strconv.ParseFloat(rec[3], 64); err == nil {
+			ohlc.Low = n
+		}
+
+		if n, err := strconv.ParseFloat(rec[4], 64); err == nil {
+			ohlc.Close = n
+		}
+
+		if n, err := strconv.ParseFloat(rec[5], 64); err == nil {
+			ohlc.Volume = n
