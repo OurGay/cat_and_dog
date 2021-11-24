@@ -90,3 +90,20 @@ func (e *Engine) calculateTimeframes(s string) {
 		time.Minute * 5,
 		time.Minute * 15,
 		time.Minute * 30,
+		time.Hour,
+		time.Hour * 4,
+		time.Hour * 24,
+	}
+
+	for i := 0; i < (len(timeframes) - 1); i++ {
+
+		currDuration, nextDuration := durations[i], durations[i+1]
+		currTimeFrame, nextTimeFrame := timeframes[i], timeframes[i+1]
+
+		currTS := e.ohlc[s].TimeSeries[currTimeFrame]
+		nextTS := e.ohlc[s].TimeSeries[nextTimeFrame]
+
+		for currTime, currOHLC := range currTS {
+
+			nextTime := currTime.Truncate(nextDuration)
+			nextOHLC, found := nextTS[nextTime]
