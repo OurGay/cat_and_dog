@@ -72,3 +72,21 @@ func (e *Engine) LoadHistory(symbol string, tf Timeframe, reader io.Reader) erro
 
 		if n, err := strconv.ParseFloat(rec[5], 64); err == nil {
 			ohlc.Volume = n
+		}
+
+		e.ohlc[symbol].TimeSeries[tf][t] = ohlc
+	}
+
+	e.calculateTimeframes(symbol)
+
+	return nil
+}
+
+func (e *Engine) calculateTimeframes(s string) {
+
+	timeframes := []Timeframe{M1, M5, M15, M30, H1, H4, D1}
+	durations := []time.Duration{
+		time.Minute,
+		time.Minute * 5,
+		time.Minute * 15,
+		time.Minute * 30,
