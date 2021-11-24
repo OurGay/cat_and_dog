@@ -107,3 +107,27 @@ func (e *Engine) calculateTimeframes(s string) {
 
 			nextTime := currTime.Truncate(nextDuration)
 			nextOHLC, found := nextTS[nextTime]
+
+			if !found {
+				nextOHLC = &OHLC{}
+				nextTS[nextTime] = nextOHLC
+			}
+
+			if nextTime == currTime {
+				nextOHLC.Open = currOHLC.Open
+			}
+
+			if nextOHLC.High == 0 || nextOHLC.High < currOHLC.High {
+				nextOHLC.High = currOHLC.High
+			}
+
+			if nextOHLC.Low == 0 || nextOHLC.Low > currOHLC.Low {
+				nextOHLC.Low = currOHLC.Low
+			}
+
+			nextOHLC.Volume = nextOHLC.Volume + currOHLC.Volume
+		}
+
+		for nextTime, nextOHLC := range nextTS {
+			subTime := nextTime.Add(nextDuration).Add(-currDuration)
+			if subOHLC, found := currTS[subTime]; found {
