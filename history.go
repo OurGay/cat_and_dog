@@ -131,3 +131,9 @@ func (e *Engine) calculateTimeframes(s string) {
 		for nextTime, nextOHLC := range nextTS {
 			subTime := nextTime.Add(nextDuration).Add(-currDuration)
 			if subOHLC, found := currTS[subTime]; found {
+				nextOHLC.Close = subOHLC.Close
+			}
+		}
+
+	}
+}
