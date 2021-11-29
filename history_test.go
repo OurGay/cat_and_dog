@@ -1,3 +1,5 @@
 package trader
 
-imp
+import (
+	"os"
+	"
