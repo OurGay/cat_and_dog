@@ -4,4 +4,5 @@ import (
 	"os"
 	"time"
 
-	. "github
+	. "github.com/onsi/ginkgo"
+	. "gi
