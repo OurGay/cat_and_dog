@@ -10,4 +10,6 @@ import (
 
 var _ = Describe("History", func() {
 	Context("CSV", func() {
-		symb
+		symbol := "BTC/USD"
+
+		I
