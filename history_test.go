@@ -5,4 +5,7 @@ import (
 	"time"
 
 	. "github.com/onsi/ginkgo"
-	. "github.com/onsi/gome
+	. "github.com/onsi/gomega"
+)
+
+var _ = Des
