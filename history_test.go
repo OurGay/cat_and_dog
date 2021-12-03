@@ -12,4 +12,4 @@ var _ = Describe("History", func() {
 	Context("CSV", func() {
 		symbol := "BTC/USD"
 
-		I
+		It("Loading",
