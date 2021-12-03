@@ -5,4 +5,4 @@ import (
 	"time"
 
 	. "github.com/onsi/ginkgo"
-	. "gi
+	. "github.com/onsi/gome
