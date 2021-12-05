@@ -14,4 +14,5 @@ var _ = Describe("History", func() {
 
 		It("Loading", func() {
 
-			ngn 
+			ngn := NewEngine()
+			qu
