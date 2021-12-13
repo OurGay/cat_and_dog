@@ -15,4 +15,5 @@ var _ = Describe("History", func() {
 		It("Loading", func() {
 
 			ngn := NewEngine()
-			quotes := make(chan Quote
+			quotes := make(chan Quote)
+			trades := make(cha
