@@ -19,4 +19,4 @@ var _ = Describe("History", func() {
 			trades := make(chan Trade)
 			ngn.AddSymbol(symbol, quotes, trades)
 
-			f, err :=
+			f, err := os.Open("fixtu
