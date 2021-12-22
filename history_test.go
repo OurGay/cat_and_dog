@@ -22,4 +22,4 @@ var _ = Describe("History", func() {
 			f, err := os.Open("fixtures/m30.csv")
 			Expect(err).To(Succeed())
 
-			err = ngn.Lo
+			err = ngn.LoadHistory(symbo
