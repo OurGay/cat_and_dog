@@ -28,4 +28,4 @@ var _ = Describe("History", func() {
 			t, err := time.Parse("2006-01-02 15:04:05", "2017-04-07 16:30:00")
 
 			Expect(ngn.ohlc[symbol].TimeSeries[M30][t].Open).Should(BeNumerically("==", 1193.99))
-			Expect(ngn.oh
+			Expect(ngn.ohlc[symbol].TimeSeries[M3
