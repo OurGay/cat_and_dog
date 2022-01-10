@@ -30,4 +30,5 @@ var _ = Describe("History", func() {
 			Expect(ngn.ohlc[symbol].TimeSeries[M30][t].Open).Should(BeNumerically("==", 1193.99))
 			Expect(ngn.ohlc[symbol].TimeSeries[M30][t].High).Should(BeNumerically("==", 1193.99))
 			Expect(ngn.ohlc[symbol].TimeSeries[M30][t].Low).Should(BeNumerically("==", 1190.00))
-			Expect(ngn.ohlc[symbol].TimeSeries[M30][t].Close).Should(BeNume
+			Expect(ngn.ohlc[symbol].TimeSeries[M30][t].Close).Should(BeNumerically("==", 1191.94))
+		
