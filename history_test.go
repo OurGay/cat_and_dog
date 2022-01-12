@@ -34,4 +34,4 @@ var _ = Describe("History", func() {
 			Expect(ngn.ohlc[symbol].TimeSeries[M30][t].Volume).Should(BeNumerically("==", 93))
 		})
 
-		It
+		It("Calculate", func() {
