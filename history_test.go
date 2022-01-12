@@ -37,4 +37,5 @@ var _ = Describe("History", func() {
 		It("Calculate", func() {
 
 			ngn := NewEngine()
-			quotes := make(chan 
+			quotes := make(chan Quote)
+			trade
