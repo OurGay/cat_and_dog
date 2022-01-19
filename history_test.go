@@ -38,4 +38,5 @@ var _ = Describe("History", func() {
 
 			ngn := NewEngine()
 			quotes := make(chan Quote)
-			trades := make(chan Tr
+			trades := make(chan Trade)
+			ngn.AddSymbol
