@@ -41,4 +41,5 @@ var _ = Describe("History", func() {
 			trades := make(chan Trade)
 			ngn.AddSymbol(symbol, quotes, trades)
 
-			f, err := os.Open("
+			f, err := os.Open("fixtures/m30.csv")
+			E
