@@ -42,4 +42,4 @@ var _ = Describe("History", func() {
 			ngn.AddSymbol(symbol, quotes, trades)
 
 			f, err := os.Open("fixtures/m30.csv")
-			E
+			Expect(err).To(Suc
