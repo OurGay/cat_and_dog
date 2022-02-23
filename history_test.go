@@ -44,4 +44,4 @@ var _ = Describe("History", func() {
 			f, err := os.Open("fixtures/m30.csv")
 			Expect(err).To(Succeed())
 
-			err = ngn.Load
+			err = ngn.LoadHistory(symbol, M30,
