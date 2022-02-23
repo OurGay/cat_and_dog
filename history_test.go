@@ -47,4 +47,4 @@ var _ = Describe("History", func() {
 			err = ngn.LoadHistory(symbol, M30, f)
 			Expect(err).To(Succeed())
 
-			t, err 
+			t, err := time.Pars
