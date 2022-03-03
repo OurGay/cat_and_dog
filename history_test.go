@@ -47,4 +47,6 @@ var _ = Describe("History", func() {
 			err = ngn.LoadHistory(symbol, M30, f)
 			Expect(err).To(Succeed())
 
-			t, err := time.Parse("2006-01-02 15:04:05", "2017-
+			t, err := time.Parse("2006-01-02 15:04:05", "2017-04-07 04:00:00")
+
+		
