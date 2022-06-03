@@ -58,4 +58,5 @@ var _ = Describe("History", func() {
 			// 2017-04-07 07:00:00,1177.43,1180.67,1176.00,1180.67,51
 			// 2017-04-07 07:30:00,1181.37,1184.96,1181.37,1184.91,58
 
-			Expect(ngn.ohlc[symbol].TimeSeries[H4][t].Open).Should(BeNumerically("==", 1186.13)
+			Expect(ngn.ohlc[symbol].TimeSeries[H4][t].Open).Should(BeNumerically("==", 1186.13))
+			Expect(ngn.ohlc[symbol].
