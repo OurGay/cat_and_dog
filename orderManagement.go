@@ -60,3 +60,17 @@ func checkSignal(s Signal) error {
 	if lsc > 0 && lso > 0 && s.SellOpen[0].Price > s.SellClose[lso-1].Price {
 		return errors.New("SellClose overlaps SellOpen")
 	}
+
+	if lbc > 0 && lbo > 0 && s.BuyOpen[0].Price > s.BuyClose[0].Price {
+		return errors.New("BuyClose overlaps BuyOpen")
+	}
+
+	return nil
+}
+
+func (o *orderManagement) signalLoop() {
+	for {
+		signal := <-o.signalCh
+
+		if reflect.DeepEqual(o.lastSignal, signal) {
+			continue
