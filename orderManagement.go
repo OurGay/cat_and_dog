@@ -44,3 +44,19 @@ func checkSignal(s Signal) error {
 	if lbo > 0 && lbc == 0 {
 		return errors.New("Missing BuyClose levels for existing BuyOpen")
 	}
+
+	if lso > 0 && lsc == 0 {
+		return errors.New("Missing SellClose levels for existing SellOpen")
+	}
+
+	if lbc > 0 && lso > 0 && s.BuyClose[lbc-1].Price > s.SellOpen[0].Price {
+		return errors.New("BuyClose overlaps SellOpen")
+	}
+
+	if lsc > 0 && lbo > 0 && s.SellClose[lsc-1].Price > s.BuyOpen[0].Price {
+		return errors.New("SellClose overlaps BuyOpen")
+	}
+
+	if lsc > 0 && lso > 0 && s.SellOpen[0].Price > s.SellClose[lso-1].Price {
+		return errors.New("SellClose overlaps SellOpen")
+	}
