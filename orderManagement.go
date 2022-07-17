@@ -92,3 +92,19 @@ func (o *orderManagement) signalLoop() {
 		o.openOrders(true, signal.BuyOpen)
 		o.openOrders(false, signal.SellOpen)
 		o.closeOrders(true, signal.BuyClose)
+		o.closeOrders(false, signal.SellClose)
+
+		o.diffOrders()
+
+		o.sendOrders()
+	}
+}
+
+func (o *orderManagement) openOrders(buySell bool, levels []Level) {
+	var sign int
+
+	if buySell {
+		sign = 1
+	} else {
+		sign = -1
+	}
