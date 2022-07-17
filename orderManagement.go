@@ -74,3 +74,21 @@ func (o *orderManagement) signalLoop() {
 
 		if reflect.DeepEqual(o.lastSignal, signal) {
 			continue
+		}
+
+		sort.Sort(byPriceDesc(signal.BuyOpen))
+		sort.Sort(byPrice(signal.BuyClose))
+		sort.Sort(byPrice(signal.SellOpen))
+		sort.Sort(byPriceDesc(signal.SellClose))
+
+		if err := checkSignal(signal); err != nil {
+			err := errors.Wrap(err, "Signal error")
+			log.Error(err.Error())
+			continue
+		}
+
+		o.lastSignal = signal
+
+		o.openOrders(true, signal.BuyOpen)
+		o.openOrders(false, signal.SellOpen)
+		o.closeOrders(true, signal.BuyClose)
