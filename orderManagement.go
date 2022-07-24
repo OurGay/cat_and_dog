@@ -108,3 +108,17 @@ func (o *orderManagement) openOrders(buySell bool, levels []Level) {
 	} else {
 		sign = -1
 	}
+
+	position := o.position(o.strategy.Symbol).Amount
+
+	for _, level := range levels {
+		amount := sign * level.Size * o.strategy.Size
+
+		if position != 0 && ((buySell && position-amount > 0) || (!buySell && position-amount < 0)) {
+			position, amount = position-amount, 0
+		} else {
+			position, amount = 0, -1*(position-amount)
+		}
+
+		if amount != 0 {
+			o.newOrders = append(o.newOrders,
