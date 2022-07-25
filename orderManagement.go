@@ -122,3 +122,18 @@ func (o *orderManagement) openOrders(buySell bool, levels []Level) {
 
 		if amount != 0 {
 			o.newOrders = append(o.newOrders,
+				Order{
+					Symbol: o.strategy.Symbol,
+					Price:  level.Price,
+					Amount: amount,
+					Type:   Limit,
+				},
+			)
+		}
+	}
+}
+
+func (o *orderManagement) closeOrders(buySell bool, levels []Level) {
+	position := o.position(o.strategy.Symbol).Amount
+	if position == 0 || (buySell && position < 0) || (!buySell && position > 0) {
+		return
