@@ -159,3 +159,19 @@ func (o *orderManagement) closeOrders(buySell bool, levels []Level) {
 		} else {
 			position, amount = 0, -position
 		}
+
+		o.newOrders = append(o.newOrders,
+			Order{
+				Symbol: o.strategy.Symbol,
+				Price:  level.Price,
+				Amount: amount,
+				Type:   Limit,
+			},
+		)
+	}
+}
+
+func (o *orderManagement) diffOrders() {
+	orders := o.allOrders()
+
+	var leave []Order
