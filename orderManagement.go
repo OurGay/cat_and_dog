@@ -137,3 +137,25 @@ func (o *orderManagement) closeOrders(buySell bool, levels []Level) {
 	position := o.position(o.strategy.Symbol).Amount
 	if position == 0 || (buySell && position < 0) || (!buySell && position > 0) {
 		return
+	}
+
+	var sign int
+
+	if buySell {
+		sign = -1
+	} else {
+		sign = 1
+	}
+
+	for _, level := range levels {
+		if position == 0 {
+			return
+		}
+
+		amount := sign * level.Size * o.strategy.Size
+
+		if (buySell && position+amount > 0) || (!buySell && position+amount < 0) {
+			position += amount
+		} else {
+			position, amount = 0, -position
+		}
