@@ -175,3 +175,22 @@ func (o *orderManagement) diffOrders() {
 	orders := o.allOrders()
 
 	var leave []Order
+
+	// existing - skip and add to leave
+
+	for i := len(o.newOrders) - 1; i >= 0; i-- {
+		for j := range orders {
+			if o.newOrders[i].Price == orders[j].Price &&
+				o.newOrders[i].Amount == orders[j].Amount {
+				o.newOrders = append(o.newOrders[:i], o.newOrders[i+1:]...)
+				leave = append(leave, orders[j])
+			}
+		}
+	}
+
+	// not found in both new and leave - kill
+
+	for _, existing := range orders {
+		found := false
+		for _, new := range o.newOrders {
+			if new.Price == existing.Price && new.Amount == existing.Amount {
