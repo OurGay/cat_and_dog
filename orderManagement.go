@@ -205,3 +205,23 @@ func (o *orderManagement) diffOrders() {
 		}
 
 		if !found {
+			o.cancelOrders = append(o.cancelOrders, Order{ID: existing.ID})
+		}
+	}
+}
+
+func (o *orderManagement) orders(buySell bool) (out []Order) {
+	orders := o.exchange.Orders()
+	for _, order := range orders {
+		if order.Symbol == o.strategy.Symbol &&
+			((order.Amount > 0 && buySell) || (order.Amount < 0 && !buySell)) {
+			out = append(out, order)
+		}
+	}
+	return
+}
+
+func (o *orderManagement) allOrders() (out []Order) {
+	orders := o.exchange.Orders()
+	for _, order := range orders {
+		if order.Symbol == o.strategy.Symbol {
