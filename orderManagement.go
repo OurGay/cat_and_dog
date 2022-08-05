@@ -194,3 +194,14 @@ func (o *orderManagement) diffOrders() {
 		found := false
 		for _, new := range o.newOrders {
 			if new.Price == existing.Price && new.Amount == existing.Amount {
+				found = true
+			}
+		}
+
+		for _, leave := range leave {
+			if leave.ID == existing.ID {
+				found = true
+			}
+		}
+
+		if !found {
