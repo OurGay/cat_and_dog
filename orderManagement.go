@@ -225,3 +225,17 @@ func (o *orderManagement) allOrders() (out []Order) {
 	orders := o.exchange.Orders()
 	for _, order := range orders {
 		if order.Symbol == o.strategy.Symbol {
+			out = append(out, order)
+		}
+	}
+	return
+}
+
+func (o *orderManagement) position(symbol string) Position {
+	for _, pos := range o.exchange.Positions() {
+		if pos.Symbol == symbol {
+			return pos
+		}
+	}
+
+	return Position{}
