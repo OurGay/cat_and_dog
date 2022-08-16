@@ -239,3 +239,22 @@ func (o *orderManagement) position(symbol string) Position {
 	}
 
 	return Position{}
+}
+
+func (o *orderManagement) sendOrders() {
+
+	if !o.sendOrdersOn {
+		return
+	}
+
+	for _, order := range o.cancelOrders {
+		go o.exchange.CancelOrder(order.ID)
+	}
+
+	for _, order := range o.newOrders {
+		go o.exchange.NewOrder(order)
+	}
+
+	o.newOrders = make([]Order, 0, 20)
+	o.cancelOrders = make([]Order, 0, 20)
+}
