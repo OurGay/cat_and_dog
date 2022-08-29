@@ -42,3 +42,23 @@ var _ = Describe("OrderManagement", func() {
 	symbol := "BTC/USD"
 
 	strategy := &Strategy{
+		Title:  "Some",
+		Code:   "qqq",
+		Symbol: symbol,
+		Size:   100,
+		Parts:  5,
+	}
+
+	Context("Signal validity", func() {
+		It("SellOpen overlaps with BuyClose", func() {
+			signal := Signal{
+				BuyClose: []Level{
+					Level{101, 1},
+					Level{102, 1},
+					Level{106, 2},
+					Level{104, 1},
+				},
+				SellOpen: []Level{
+					Level{103, 1},
+				},
+			}
