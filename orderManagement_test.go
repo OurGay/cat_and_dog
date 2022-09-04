@@ -62,3 +62,21 @@ var _ = Describe("OrderManagement", func() {
 					Level{103, 1},
 				},
 			}
+
+			Expect(checkSignal(signal)).Should(HaveOccurred())
+		})
+	})
+
+	Context("Orders", func() {
+		It("Should create new buy orders", func() {
+			ex := &exchng{
+				pos: []Position{
+					Position{symbol, 100, 150},
+				},
+				ord: []Order{
+					Order{
+						ID:     "67",
+						Symbol: symbol,
+						Price:  97,
+						Amount: 200,
+					}, Order{
