@@ -80,3 +80,20 @@ var _ = Describe("OrderManagement", func() {
 						Price:  97,
 						Amount: 200,
 					}, Order{
+						ID:     "5",
+						Symbol: symbol,
+						Price:  95.5,
+						Amount: 200,
+					},
+				},
+			}
+
+			om := newOrderManagement(strategy, ex)
+			om.sendOrdersOn = false
+			go om.signalLoop()
+
+			signal := Signal{
+				Strategy: strategy,
+				BuyOpen: []Level{
+					Level{99, 1},
+					Level{98, 1},
