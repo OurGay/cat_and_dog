@@ -97,3 +97,24 @@ var _ = Describe("OrderManagement", func() {
 				BuyOpen: []Level{
 					Level{99, 1},
 					Level{98, 1},
+					Level{97, 2},
+					Level{96, 1},
+				},
+				BuyClose: []Level{
+					Level{102, 3},
+					Level{103, 1},
+				},
+			}
+
+			Expect(checkSignal(signal)).Should(Succeed())
+
+			om.signalCh <- signal
+
+			openOrders := []Order{
+				Order{Symbol: symbol, Price: 98, Amount: 50},
+				Order{Symbol: symbol, Price: 96, Amount: 100},
+				Order{Symbol: symbol, Price: 102, Amount: -150},
+			}
+
+			cancelOrders := []Order{
+				Order{ID: "5"},
