@@ -149,3 +149,25 @@ var _ = Describe("OrderManagement", func() {
 				Strategy: strategy,
 				SellOpen: []Level{
 					Level{105, 1},
+					Level{108, 1},
+					Level{102, 2},
+					Level{109, 1},
+				},
+				SellClose: []Level{
+					Level{105, 1},
+					Level{108, 1},
+					Level{102, 2},
+					Level{109, 1},
+				},
+			}
+
+			Expect(checkSignal(signal)).Should(Succeed())
+
+			om.signalCh <- signal
+
+			openOrders := []Order{
+				Order{Symbol: symbol, Price: 102, Amount: -350},
+				Order{Symbol: symbol, Price: 105, Amount: -100},
+				Order{Symbol: symbol, Price: 108, Amount: -100},
+				Order{Symbol: symbol, Price: 109, Amount: -100},
+			}
