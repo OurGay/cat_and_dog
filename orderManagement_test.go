@@ -171,3 +171,10 @@ var _ = Describe("OrderManagement", func() {
 				Order{Symbol: symbol, Price: 108, Amount: -100},
 				Order{Symbol: symbol, Price: 109, Amount: -100},
 			}
+
+			time.Sleep(time.Millisecond)
+
+			Expect(om.newOrders).Should(Equal(openOrders))
+		})
+	})
+})
