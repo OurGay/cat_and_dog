@@ -118,3 +118,18 @@ var _ = Describe("OrderManagement", func() {
 
 			cancelOrders := []Order{
 				Order{ID: "5"},
+			}
+
+			time.Sleep(time.Millisecond)
+
+			Expect(om.newOrders).Should(Equal(openOrders))
+			Expect(om.cancelOrders).Should(Equal(cancelOrders))
+		})
+
+		It("Should create new sell orders", func() {
+
+			ex := &exchng{
+				pos: []Position{
+					Position{symbol, 100, 150},
+				},
+				ord: []Order{
