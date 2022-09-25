@@ -1,3 +1,4 @@
 package trader
 
-//Strateg
+//Strategy struct
+type Stra
