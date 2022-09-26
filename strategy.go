@@ -1,4 +1,5 @@
 package trader
 
 //Strategy struct
-type Stra
+type Strategy struct {
+	Symbol
