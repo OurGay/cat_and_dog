@@ -6,4 +6,5 @@ type Strategy struct {
 	Code    string
 	Title   string
 	Parts   int
-	Size
+	Size    int
+	Decimal int
