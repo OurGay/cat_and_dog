@@ -3,4 +3,5 @@ package trader
 //Strategy struct
 type Strategy struct {
 	Symbol  string
-	Code 
+	Code    string
+	Title   string
