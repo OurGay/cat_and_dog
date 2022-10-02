@@ -8,3 +8,5 @@ type Strategy struct {
 	Parts   int
 	Size    int
 	Decimal int
+
+	OnTick func(*E
