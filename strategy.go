@@ -9,4 +9,4 @@ type Strategy struct {
 	Size    int
 	Decimal int
 
-	OnTick func(*E
+	OnTick func(*Engine) (Signal, 
