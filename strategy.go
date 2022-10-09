@@ -10,4 +10,5 @@ type Strategy struct {
 	Decimal int
 
 	OnTick func(*Engine) (Signal, error)
-	Init   func(*Engine
+	Init   func(*Engine) error
+}
