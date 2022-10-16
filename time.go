@@ -1,3 +1,4 @@
 package trader
 
-im
+import (
+	"tim
