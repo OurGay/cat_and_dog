@@ -1,4 +1,7 @@
 package trader
 
 import (
-	"tim
+	"time"
+)
+
+//Timeframe typ
