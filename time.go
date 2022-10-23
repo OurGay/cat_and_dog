@@ -4,4 +4,5 @@ import (
 	"time"
 )
 
-//Timeframe typ
+//Timeframe type
+type Time
