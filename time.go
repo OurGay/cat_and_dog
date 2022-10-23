@@ -7,4 +7,5 @@ import (
 //Timeframe type
 type Timeframe uint8
 
-//Time
+//Timeframes
+const
