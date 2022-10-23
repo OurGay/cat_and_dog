@@ -5,4 +5,6 @@ import (
 )
 
 //Timeframe type
-type Time
+type Timeframe uint8
+
+//Time
