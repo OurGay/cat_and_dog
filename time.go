@@ -8,4 +8,5 @@ import (
 type Timeframe uint8
 
 //Timeframes
-const
+const (
+	M1 Timeframe
