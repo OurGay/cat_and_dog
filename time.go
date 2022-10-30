@@ -18,4 +18,5 @@ const (
 	D1
 )
 
-//His
+//History for symbol
+type Hist
