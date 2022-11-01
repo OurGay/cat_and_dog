@@ -20,4 +20,4 @@ const (
 
 //History for symbol
 type History struct {
-	Ti
+	TimeSeries map[Timef
