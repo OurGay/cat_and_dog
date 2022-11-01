@@ -19,4 +19,5 @@ const (
 )
 
 //History for symbol
-type Hist
+type History struct {
+	Ti
