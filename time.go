@@ -20,4 +20,7 @@ const (
 
 //History for symbol
 type History struct {
-	TimeSeries map[Timeframe]map[time
+	TimeSeries map[Timeframe]map[time.Time]*OHLC
+}
+
+//OHLC
