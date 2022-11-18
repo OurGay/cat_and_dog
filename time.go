@@ -23,4 +23,5 @@ type History struct {
 	TimeSeries map[Timeframe]map[time.Time]*OHLC
 }
 
-//OHLC
+//OHLC structure
+ty
