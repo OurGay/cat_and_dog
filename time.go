@@ -24,4 +24,5 @@ type History struct {
 }
 
 //OHLC structure
-type OHLC stru
+type OHLC struct {
+	Open, High, Low
