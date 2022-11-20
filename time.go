@@ -24,4 +24,4 @@ type History struct {
 }
 
 //OHLC structure
-ty
+type OHLC stru
