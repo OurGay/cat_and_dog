@@ -28,4 +28,4 @@ type OHLC struct {
 	Open, High, Low, Close, Volume float64
 }
 
-func (e *Engine) gotQuote(s
+func (e *Engine) gotQuote(symbol string, quot
