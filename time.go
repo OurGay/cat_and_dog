@@ -25,4 +25,7 @@ type History struct {
 
 //OHLC structure
 type OHLC struct {
-	Open, High, Low, Close, Volume floa
+	Open, High, Low, Close, Volume float64
+}
+
+func (e *Eng
