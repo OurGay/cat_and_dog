@@ -29,4 +29,6 @@ type OHLC struct {
 }
 
 func (e *Engine) gotQuote(symbol string, quote Quote) {
-	h :
+	h := e.quotes[symbol]
+
+	if
