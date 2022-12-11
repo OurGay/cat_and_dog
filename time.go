@@ -35,3 +35,4 @@ func (e *Engine) gotQuote(symbol string, quote Quote) {
 		h.Bid = quote.Bid
 	}
 
+	if quote.Ask
