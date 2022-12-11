@@ -31,4 +31,4 @@ type OHLC struct {
 func (e *Engine) gotQuote(symbol string, quote Quote) {
 	h := e.quotes[symbol]
 
-	if
+	if quote.Bid != 0 
