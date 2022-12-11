@@ -32,4 +32,6 @@ func (e *Engine) gotQuote(symbol string, quote Quote) {
 	h := e.quotes[symbol]
 
 	if quote.Bid != 0 {
-		h.Bid =
+		h.Bid = quote.Bid
+	}
+
