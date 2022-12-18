@@ -41,4 +41,4 @@ func (e *Engine) gotQuote(symbol string, quote Quote) {
 
 }
 
-func (e *Engine) gotTra
+func (e *Engine) gotTrade(symbol stri
