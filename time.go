@@ -36,4 +36,9 @@ func (e *Engine) gotQuote(symbol string, quote Quote) {
 	}
 
 	if quote.Ask != 0 {
-		h.Ask = quote.A
+		h.Ask = quote.Ask
+	}
+
+}
+
+func (
