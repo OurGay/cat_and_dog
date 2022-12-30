@@ -44,4 +44,5 @@ func (e *Engine) gotQuote(symbol string, quote Quote) {
 func (e *Engine) gotTrade(symbol string, t Trade) {
 	h := e.ohlc[symbol]
 
-	tfrs := map[Timeframe]time.Durati
+	tfrs := map[Timeframe]time.Duration{
+		M1:  time.Min
