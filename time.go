@@ -45,4 +45,5 @@ func (e *Engine) gotTrade(symbol string, t Trade) {
 	h := e.ohlc[symbol]
 
 	tfrs := map[Timeframe]time.Duration{
-		M1:  time.Min
+		M1:  time.Minute,
+		M5:  time
