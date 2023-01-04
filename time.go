@@ -47,4 +47,4 @@ func (e *Engine) gotTrade(symbol string, t Trade) {
 	tfrs := map[Timeframe]time.Duration{
 		M1:  time.Minute,
 		M5:  time.Minute * 5,
-		M15: time.
+		M15: time.Minute * 15,
