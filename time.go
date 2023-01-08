@@ -48,3 +48,4 @@ func (e *Engine) gotTrade(symbol string, t Trade) {
 		M1:  time.Minute,
 		M5:  time.Minute * 5,
 		M15: time.Minute * 15,
+		M30: time.Minut
