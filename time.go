@@ -54,4 +54,4 @@ func (e *Engine) gotTrade(symbol string, t Trade) {
 		D1:  time.Hour * 24,
 	}
 
-	for t
+	for tf, dur := rang
