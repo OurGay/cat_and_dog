@@ -55,4 +55,4 @@ func (e *Engine) gotTrade(symbol string, t Trade) {
 	}
 
 	for tf, dur := range tfrs {
-		tmpTime := 
+		tmpTime := t.Time.Truncate(dur)
