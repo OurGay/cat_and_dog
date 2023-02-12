@@ -58,4 +58,5 @@ func (e *Engine) gotTrade(symbol string, t Trade) {
 		tmpTime := t.Time.Truncate(dur)
 		ohlc, found := h.TimeSeries[tf][tmpTime]
 
-	
+		if !found {
+			ohlc
