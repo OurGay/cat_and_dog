@@ -59,4 +59,4 @@ func (e *Engine) gotTrade(symbol string, t Trade) {
 		ohlc, found := h.TimeSeries[tf][tmpTime]
 
 		if !found {
-			ohlc
+			ohlc = &OHLC{
