@@ -61,3 +61,4 @@ func (e *Engine) gotTrade(symbol string, t Trade) {
 		if !found {
 			ohlc = &OHLC{
 				Open:   t.Price,
+				High:  
