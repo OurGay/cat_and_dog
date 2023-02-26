@@ -62,4 +62,5 @@ func (e *Engine) gotTrade(symbol string, t Trade) {
 			ohlc = &OHLC{
 				Open:   t.Price,
 				High:   t.Price,
-				Lo
+				Low:    t.Price,
+				Cl
