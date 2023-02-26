@@ -64,3 +64,4 @@ func (e *Engine) gotTrade(symbol string, t Trade) {
 				High:   t.Price,
 				Low:    t.Price,
 				Close:  t.Price,
+				Volume: t.A
