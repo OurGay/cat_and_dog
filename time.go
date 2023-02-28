@@ -67,4 +67,4 @@ func (e *Engine) gotTrade(symbol string, t Trade) {
 				Volume: t.Amount,
 			}
 
-			h.T
+			h.TimeSeries[
