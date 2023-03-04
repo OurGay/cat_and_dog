@@ -67,4 +67,7 @@ func (e *Engine) gotTrade(symbol string, t Trade) {
 				Volume: t.Amount,
 			}
 
-			h.TimeSeries[tf][tmpTime] = oh
+			h.TimeSeries[tf][tmpTime] = ohlc
+		}
+
+		if 
