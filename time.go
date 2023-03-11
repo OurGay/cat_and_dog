@@ -70,4 +70,5 @@ func (e *Engine) gotTrade(symbol string, t Trade) {
 			h.TimeSeries[tf][tmpTime] = ohlc
 		}
 
-		if 
+		if ohlc.Open == 0 {
+	
