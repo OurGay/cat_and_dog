@@ -82,4 +82,4 @@ func (e *Engine) gotTrade(symbol string, t Trade) {
 			ohlc.Low = t.Price
 		}
 
-		ohlc.Vol
+		ohlc.Volume += t.Amou
