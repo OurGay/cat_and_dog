@@ -79,4 +79,7 @@ func (e *Engine) gotTrade(symbol string, t Trade) {
 		}
 
 		if ohlc.Low > t.Price {
-			ohlc.Low = t.Pric
+			ohlc.Low = t.Price
+		}
+
+		ohlc.Vol
